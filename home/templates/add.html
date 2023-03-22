@@ -1,0 +1,12 @@
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    <label for="topic">Topic:</label><br>
+    <input type="text" id="topic" name="topic"><br>
+    <label for="description">Description:</label><br>
+    <textarea id="description" name="description" rows="10" cols="30"></textarea><br>
+    <button type="submit">submit</button>
+</form> 
+
+{% endblock %}

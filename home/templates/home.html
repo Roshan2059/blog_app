@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<div class="container">
+    <div class="jumbotron">
+        {% if content %}
+            {% for i in content %}
+                <h1>{{i.topic}}</h1>
+                <h3>{{i.description}}</h3>
+                <small>date posted : {{i.date_time_posted}}</small><br>
+                <small>date updated : {{i.date_updated}}</small><br>
+                <a href="{% url 'edit' id=i.id %}" class="btn btn-primary">Edit</a>
+                <a href="{% url 'delete-ind' id=i.id %}" class="btn btn-danger">Delete</a>
+                <hr>
+            {% endfor %}
+        {% else %}
+            <h1>currently there are no any blog.</h1>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
